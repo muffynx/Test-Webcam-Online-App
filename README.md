@@ -63,8 +63,9 @@ yarn install
 
 ### รูปภาพ
 
-<img width="473" height="896" alt="4" src="https://github.com/user-attachments/assets/7583ee6c-7960-4c9c-8de6-47d56e4171e2" />
 
+
+<img width="446" height="870" alt="22" src="https://github.com/user-attachments/assets/dce726ae-82d8-45e7-8777-53ffe3a60a5f" />
 
 <img width="473" height="896" alt="IMG_2480"  src="https://github.com/user-attachments/assets/f531ada1-f21f-49a3-a6e6-52468aa820d1" />
 
