@@ -43,16 +43,15 @@ yarn install
    ```bash
    npx expo start --clear
    ```
-2. **ให้คอมพิวเตอร์และมือถืออยู่ใน Wi-Fi เดียวกัน**
+2. **ให้คอมพิวเตอร์และมือถืออยู่ในวง Wi-Fi เดียวกัน**
 
    
-### Step 6: ให้สิทธิ์ (Permissions)
+### Step 6: ให้สิทธิ์เพื่อเข้าถึงกล้อง (Permissions)
 
 
 ## Usage
 1. **หน้าจอเริ่มต้น**: 
    - กดปุ่ม "Start test" เพื่อขอสิทธิ์และเข้าสู่โหมดกล้อง
-   - ตัวเลือก "Autostart next time" เป็น placeholder (สามารถทำงานได้จริงด้วย Switch component)
 2. **โหมดกล้อง**:
    - ปุ่มซ้าย: เปิด/ปิดแฟลช (ไอคอนเปลี่ยนตามสถานะ)
    - Use the middle button (red circle) to take a photo.
