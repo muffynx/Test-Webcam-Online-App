@@ -17,7 +17,7 @@ React Native ที่สร้างด้วย Expo ที่สามาร�
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/your-username/expo-camera-app.git
+git clone https://github.com/muffynx/Test-Webcam-Online-App.git
 cd expo-camera-app
 ```
 
