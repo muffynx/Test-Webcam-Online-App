@@ -10,8 +10,8 @@ import {
 import * as MediaLibrary from "expo-media-library";
 import { Ionicons } from "@expo/vector-icons";
 
-// Placeholder image URL for background
-const BACKGROUND_IMAGE = "https://example.com/earth_texture.jpg"; // Replace with your image
+
+const BACKGROUND_IMAGE = "https://i.pinimg.com/236x/5f/8b/4a/5f8b4a682b9bb09ec3bac28d2ea4ad47.jpg"; 
 
 export default function App() {
   const [cameraPermission, requestCameraPermission] = useCameraPermissions();
@@ -38,7 +38,7 @@ export default function App() {
         }
       } catch (error) {
         console.error("Error requesting permissions:", error);
-        Alert.alert("Error", "Failed to request permissions. Please check your network or settings.");
+        Alert.alert("Error", "ไม่สามารถขอสิทธิ์ได้");
       }
     };
     requestPermissions();
@@ -57,9 +57,9 @@ export default function App() {
                 const mediaStatus = await MediaLibrary.requestPermissionsAsync();
                 setMediaLibraryPermission(mediaStatus.status === "granted");
                 if (cameraStatus.status === "granted" && mediaStatus.status === "granted") {
-                  console.log("Permissions granted, proceeding to camera view");
+                  console.log("ได้รับอนุญาตแล้ว กำลังดำเนินการดูกล้อง");
                 } else {
-                  Alert.alert("Warning", "Please grant all permissions to use the camera.");
+                  Alert.alert("คำเตือน กรุณาให้สิทธิ์ผู้ใช้กล้อง");
                 }
               } catch (error) {
                 console.error("Error on start press:", error);
@@ -84,8 +84,8 @@ export default function App() {
         <View style={styles.container}>
           <Text style={styles.errorText}>
             {Platform.OS === "web"
-              ? "Camera access limited on web. Use a mobile device with Expo Go."
-              : "Please grant camera and media library access in settings."}
+              ? "การเข้าถึงกล้องมีข้อจำกัดบนเว็บ"
+              : "กรุณาให้สิทธิ์เข้าถึงกล้อง"}
           </Text>
           <Pressable
             style={styles.retryButton}
@@ -124,16 +124,16 @@ export default function App() {
     if (image) {
       try {
         if (Platform.OS === "web") {
-          Alert.alert("Warning", "Saving not supported on web.");
+          Alert.alert("เตือน", "การบันทึกไม่รองรับบนเว็บ");
           setImage(null);
           return;
         }
         await MediaLibrary.createAssetAsync(image);
-        Alert.alert("Success", "Image saved!");
+        Alert.alert("Success", "ภาพได้บันทึกแล้ว!");
         setImage(null);
       } catch (error) {
         console.error("Error saving image:", error);
-        Alert.alert("Error", "Failed to save image.");
+        Alert.alert("Error", "ล้มเหลว.");
       }
     }
   };
@@ -148,7 +148,7 @@ export default function App() {
         return newMode;
       });
     } else {
-      console.log("Camera ref is not available");
+      console.log("กล้องไม่พร้อมใช้งาน");
     }
   };
 
@@ -199,17 +199,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: { flex: 1, alignItems: "center", justifyContent: "center" },
   background: { flex: 1, width: "100%", height: "100%" },
-  title: { fontSize: 40, fontWeight: "bold", color: "#000", textAlign: "center", marginBottom: 20 },
+  title: { fontSize: 40, fontWeight: "bold", color: "#f0ebebff", textAlign: "center", marginBottom: 20 },
   startButton: {
     flexDirection: "row", backgroundColor: "#007AFF", padding: 10, borderRadius: 10, alignItems: "center",
   },
   buttonText: { color: "#fff", fontSize: 18, fontWeight: "bold", marginLeft: 5 },
   icon: { marginRight: 5 },
   switchContainer: { marginTop: 20, flexDirection: "row", alignItems: "center" },
-  switchText: { fontSize: 16, color: "#000", marginLeft: 10 },
+  switchText: { fontSize: 16, color: "#e7d5d5ff", marginLeft: 10 },
   camera: { flex: 1, width: "100%" },
   buttonContainer: {
-    backgroundColor: "rgba(0, 0, 0, 0.7)", padding: 20, flexDirection: "row", justifyContent: "space-around",
+    backgroundColor: "rgba(218, 198, 198, 0.7)", padding: 20, flexDirection: "row", justifyContent: "space-around",
     width: "100%", position: "absolute", bottom: 0,
   },
   captureButton: {
